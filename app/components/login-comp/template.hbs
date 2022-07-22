@@ -1,0 +1,33 @@
+<div class="content">
+  <div>
+    <h1>Login page</h1>
+    {{#if this.notice }}
+      <div style="color: green">
+        {{ this.notice }}
+      </div>
+    {{/if}}
+    <div class="pd-tp-10">
+      <table style="width: 30%">
+        <tr>
+          <td><label for="email">Email</label></td>
+          <td>{{ input type="text" value=this.email }}</td>
+        </tr>
+        <tr>
+          <td><label for="password">Password</label></td>
+          <td>{{ input type="password" value=this.password }}</td>
+        </tr>
+        <tr>
+          <td>
+          </td>
+          <td>
+            <div class="pd-tp-10" style="margin-left: 30%;">
+              <button onClick={{action "login"}}>
+                Log In
+              </button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

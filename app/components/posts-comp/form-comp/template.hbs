@@ -1,0 +1,44 @@
+<div class="content">
+  <div>
+    <h1>Add new post</h1>
+    {{#if this.errMsg }}
+      <div style="color: red">
+        <p class="pd-bt-5">{{ this.errMsg }}</p>
+      </div>
+    {{/if}}
+    <table>
+      <tr>
+        <td><label for="firstName">Title</label></td>
+        <td>{{ input type="text" value=this.title size=50 }}</td>
+      </tr>
+      <tr>
+        <td><label for="firstName">Content</label></td>
+        <td>{{ textarea value=this.content rows=20 cols=43 }}</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="pd-tp-10">
+            {{#if this.post.id }}
+              {{#link-to "post-details" this.post.id }}
+                Back
+              {{/link-to}}
+            {{else}}
+               {{#link-to "posts" }}
+                 Back
+               {{/link-to}}
+            {{/if}}
+          </div>
+        </td>
+        <td>
+          <div class="flt-rgt pd-tp-10">
+            {{ input type="hidden" value=this.post.id }}
+            {{ input type="hidden" value=this.userDetails.userId }}
+            <button onClick={{action "createOrUpdatePost"}}>
+              {{if this.post.id "Update post" "Create post"}}
+            </button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

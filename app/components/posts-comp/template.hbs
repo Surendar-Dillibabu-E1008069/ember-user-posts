@@ -1,0 +1,61 @@
+<div class="content">
+  <div class="div-lft">
+    {{#if this.posts }}
+      <h1>List of posts</h1>
+      {{#if this.errMsg }}
+        <div style="color: red">
+          <p class="pd-bt-5">{{ this.errMsg }}</p>
+        </div>
+      {{/if}}
+      {{#if this.notice }}
+        <div style="color: green">
+          {{ this.notice }}
+        </div>
+      {{/if}}
+      <p>Please find the list of posts created by you and your followers </p>
+      <div class="pd-tp-10">
+        <table>
+          <thead>
+            <tr>
+              <th class="tb-brder">Title</th>
+              <th class="tb-brder">Content</th>
+              <th class="tb-brder" colspan="1"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each this.posts as |post| }}
+              <tr>
+                <td class="tb-brder">{{ post.title }}</td>
+                <td class="tb-brder">{{ substr-helper post.content 30 }}</td>
+                <td class="tb-brder">
+                  {{#link-to "post-details" post.id }} Show post {{/link-to}}
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    {{else}}
+      <div class="pd-tp-30">
+        No post created by the logged in user
+      </div>
+    {{/if}}
+    <div class="pd-tp-30">
+      {{#link-to "post" }} Create new post {{/link-to}}
+    </div>
+  </div>
+  <div class="div-rgt pd-tp-10">
+    <h2>Suggestions for you</h2>
+    <div>
+      <table>
+        {{#each this.users as |user| }}
+          {{#posts-comp/follower-comp
+                userId=this.userDetails.userId
+                user=user
+                followers_list=this.followers_list }}
+          {{/posts-comp/follower-comp }}
+        {{/each}}
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+{{#navbar-comp userDetails=this.model.userDetails }} {{/navbar-comp}}
+{{#posts-comp
+      userDetails=this.model.userDetails
+      posts=this.model.response.posts
+      users=this.model.response.users
+      followers_list=this.model.response.followers_list }}
+{{/posts-comp}}

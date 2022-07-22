@@ -1,0 +1,13 @@
+<tr>
+  <td class="pd-tp-10">
+    <div class="flt-lft">{{ user.first_name }}</div>
+    <div class="flt-rgt pd-lft-30">
+      |
+      {{#if this.isFollowed }}
+        <button class="btn-lnk" onClick={{action "followOrUnfollowUser" user.id true}}> Unfollow </button>
+      {{else}}
+        <button class="btn-lnk" onClick={{action "followOrUnfollowUser" user.id false}}> Follow </button>
+      {{/if}}
+    </div>
+  </td>
+</tr>

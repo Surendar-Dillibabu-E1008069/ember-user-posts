@@ -1,0 +1,36 @@
+<div class="content">
+  <div>
+    <h1>User details</h1>
+    {{#if this.notice }}
+      <div style="color: green">
+        {{ this.notice }}
+      </div>
+    {{/if}}
+    <p>Please find the user details below</p>
+    <div class="pd-tp-10">
+      <table class="edt-pst-tb">
+        <tbody>
+          <tr>
+            <td style="font-weight: bold">First name : </td>
+            <td>{{ this.user.first_name }}</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Last name : </td>
+            <td>{{ this.user.last_name }}</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Email : </td>
+            <td>{{ this.user.email }}</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="pd-tp-10">
+                {{#link-to "edit-user-details" this.user.id }} Edit user {{/link-to}}
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

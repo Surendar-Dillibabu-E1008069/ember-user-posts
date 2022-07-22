@@ -1,17 +1,58 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
-/tmp
+dist
+tmp
 
 # dependencies
-/node_modules
-/bower_components
+node_modules
+bower_components
+package-lock.json
 
 # misc
-/.sass-cache
-/connect.lock
-/coverage/*
-/libpeerconnection.log
-npm-debug.log*
+.sass-cache
+.vscode/**
+connect.lock
+coverage/*
+libpeerconnection.log
+npm-debug.log
 testem.log
+.vscode
+vendor/polyfills.js
+
+/.bundle
+/db/*.sqlite3
+/log/*.log
+/tmp
+/**/.DS_Store
+/db/migrate/*_create_fd_multitenant_*.fd_multitenant.rb
+/dump.rdb
+.fontcustom-manifest.json
+app/assets/stylesheets/newTheme/fonts/fs-icons-preview.html
+public/assets
+
+.byebug_history
+.gemtags
+.tags
+.tags_sorted_by_file
+.sass-cache
+/.idea
+coverage
+brakeman-output.tabs
+brakeman/brakeman-output.*
+/.vagrant
+/dump.rdb
+/package-lock.json
+/analytics/webform.js
+/assets/smartform
+/assets/fonts/bootstrap
+/public/web_forms
+
+*.pyc
+
+/spock/*.txt
+/spock/*.log
+/spock/*.json
+coverage_*
+/.vscode
+vendor/bundle

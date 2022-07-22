@@ -1,0 +1,5 @@
+{{#navbar-comp userDetails=this.model }} {{/navbar-comp}}
+{{#posts-comp/form-comp
+      userDetails=this.model
+      afterPostCreateTransition=(action send "afterPostCreateTransition") }}
+{{/posts-comp/form-comp}}

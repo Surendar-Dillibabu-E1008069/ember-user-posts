@@ -1,0 +1,39 @@
+<div class="content">
+  <div>
+    <h1>Post details</h1>
+    {{#if this.notice }}
+      <div style="color: green">
+        {{ this.notice }}
+      </div>
+    {{/if}}
+    <p>Please find the post details below</p>
+    <div class="pd-tp-10">
+      <table class="edt-pst-tb">
+        <tbody>
+          <tr>
+            <td style="font-weight: bold">Title: </td>
+            <td class="pd-lft-30">{{ this.post.title }}</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bold">Content: </td>
+            <td class="pd-lft-30">{{ this.post.content }}</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="pd-tp-10">
+                {{#link-to "posts" }} Back {{/link-to}}
+              </div>
+            </td>
+            <td>
+              <div class="pd-tp-10 flt-rgt">
+                {{#if this.isPostEditable }}
+                  {{#link-to "edit-post-details" this.post.id }} Edit post {{/link-to}}
+                {{/if}}
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

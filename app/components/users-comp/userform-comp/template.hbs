@@ -1,0 +1,56 @@
+<div class="content">
+  <div>
+    <h1>User registration</h1>
+    {{#if this.errMsg }}
+      <div style="color: red">
+        {{ this.errMsg }}
+      </div>
+    {{/if}}
+    {{#if notice }}
+      <div style="color: green">
+        {{ notice }}
+      </div>
+    {{/if}}
+    <div class="pd-tp-10">
+      <table class="edt-pst-tb">
+        <tr>
+          <td><label for="firstName">First name</label></td>
+          <td>{{ input type="text" value=this.firstName size=30 }}</td>
+        </tr>
+        <tr>
+          <td><label for="lastName">Last name</label></td>
+          <td>{{ input type="text" value=this.lastName size=30 }}</td>
+        </tr>
+        <tr>
+          <td><label for="email">Email</label></td>
+          <td>{{ input type="text" value=this.email size=30 }}</td>
+        </tr>
+        <tr>
+          <td><label for="password">Password</label></td>
+          <td>{{ input type="password" value=this.password size=30 }}</td>
+        </tr>
+        <tr>
+          <td><label for="passwordConfirmation">Password confirmation</label></td>
+          <td>{{ input type="password" value=this.passwordConfirmation size=30 }}</td>
+        </tr>
+        <tr>
+          <td>
+            {{#if this.userId }}
+              <div class="pd-tp-10">
+                {{#link-to "user-details" this.userId }} Back {{/link-to}}
+              </div>
+            {{/if}}
+          </td>
+          <td>
+            <div class="pd-tp-10" style="margin-left: 50%">
+              {{ input type="hidden" value=this.id }}
+              <button onClick={{action "createOrUpdateUser"}}>
+                 {{if this.userId "Update User" "Create User"}}
+              </button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

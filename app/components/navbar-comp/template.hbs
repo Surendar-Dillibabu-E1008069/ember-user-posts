@@ -1,0 +1,35 @@
+<div class="sidebar">
+  {{#if this.isLoggedIn }}
+    {{#link-to "home" }}
+      <span>
+        Home
+      </span>
+    {{/link-to}}
+    {{#link-to "user-details" this.userDetails.userId }}
+      <span>
+        User details
+      </span>
+    {{/link-to}}
+    {{#link-to "posts" }}
+      <span>
+        View Posts
+      </span>
+    {{/link-to}}
+    {{#link-to "logout" }}
+      <span onClick={{action "logout"}}>
+        Logout
+      </span>
+    {{/link-to}}
+  {{else}}
+    {{#link-to "signup" }}
+      <span>
+        Sign Up
+      </span>
+    {{/link-to}}
+    {{#link-to "login" }}
+      <span>
+        Login
+      </span>
+    {{/link-to}}
+  {{/if}}
+</div>

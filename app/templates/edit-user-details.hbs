@@ -1,0 +1,6 @@
+{{#navbar-comp userDetails=this.model.userDetails }} {{/navbar-comp}}
+{{#users-comp/userform-comp
+      userDetails=this.model.userDetails
+      user=this.model.user
+      afterUserUpdateTransition=(action send "afterUserUpdateTransition") }}
+{{/users-comp/userform-comp}}
