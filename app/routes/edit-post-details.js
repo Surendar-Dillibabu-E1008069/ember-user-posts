@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   async model(params) {
 
     let userDetails = JSON.parse(sessionStorage.getItem('userDetails'));
-    let post = await fetch('http://localhost:3000/posts/'+params.post_id+".json", {
+    let post = await fetch('http://localhost:3000/posts/'+params.post_id+"/edit.json?userId="+userDetails.userId, {
       method: "GET",
       headers: { 'Content-Type': 'application/json' },
     })
@@ -16,12 +16,16 @@ export default Ember.Route.extend({
         return data;
       });
 
-    let responseData = {
-      userDetails,
-      post
-    }
+    if(post.errMsg != null && post.errMsg === "access_denied") {
+      this.transitionTo('access-denied');
+    } else {
+      let responseData = {
+        userDetails,
+        post
+      }
 
-    return responseData;
+      return responseData;
+    }
   },
 
   actions: {

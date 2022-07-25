@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('post-details', { path: '/posts/:post_id'});
   this.route('edit-post-details', { path: '/posts/:post_id/edit'});
   this.route('edit-user-details', { path: '/users/:user_id/edit'});
+  this.route('access-denied');
 });
 
 export default Router;

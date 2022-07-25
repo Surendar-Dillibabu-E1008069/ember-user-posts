@@ -1,6 +1,6 @@
 <div class="content">
   <div>
-    <h1>Add new post</h1>
+    <h1>{{if this.postId "Edit post details" "Add new post"}}</h1>
     {{#if this.errMsg }}
       <div style="color: red">
         <p class="pd-bt-5">{{ this.errMsg }}</p>
